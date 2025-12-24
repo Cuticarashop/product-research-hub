@@ -80,8 +80,33 @@
       box-shadow:var(--shadow);
     }
 
+    /* --- Sponsored block (first fold) --- */
+    .adBanner{
+      padding:14px 22px 0;
+    }
+    .adLabel{
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.08em;
+      color:#111827;
+      text-transform:uppercase;
+      display:inline-block;
+      padding:8px 10px;
+      border-radius:10px;
+      background:#f3f4f6;
+      border:1px solid rgba(17,24,39,.12);
+    }
+    .adSub{
+      margin:8px 0 0;
+      font-size:12px;
+      color:#6b7280;
+      font-weight:800;
+      letter-spacing:.02em;
+      text-transform:uppercase;
+    }
+
     .hero{
-      padding:22px 22px 18px;
+      padding:14px 22px 18px;
       display:grid;
       grid-template-columns: 1.2fr .8fr;
       gap:18px;
@@ -89,6 +114,8 @@
     }
     @media (max-width:860px){
       .hero{grid-template-columns:1fr;}
+      .adBanner{padding:14px 16px 0;}
+      .hero{padding:14px 16px 18px;}
     }
 
     .kicker{
@@ -211,6 +238,9 @@
       padding:18px 22px 22px;
       border-top:1px solid var(--stroke);
     }
+    @media (max-width:860px){
+      .body{padding:18px 16px 22px;}
+    }
 
     .cols{
       display:grid;
@@ -245,13 +275,6 @@
       line-height:1.45;
     }
 
-    .siteFooter{
-      margin-top:14px;
-      color:rgba(255,255,255,.80);
-      font-size:12px;
-      text-align:center;
-    }
-
     /* Compliance footer inside card */
     .complianceFooter{
       margin-top:16px;
@@ -261,10 +284,18 @@
       color:#4b5563;
       line-height:1.5;
       background:#fff;
+      border-radius:14px;
     }
     .complianceFooter a{color:var(--link);font-weight:800;text-decoration:none}
     .complianceFooter a:hover{text-decoration:underline}
     .complianceLinks{margin-top:10px}
+
+    .siteFooter{
+      margin-top:14px;
+      color:rgba(255,255,255,.80);
+      font-size:12px;
+      text-align:center;
+    }
   </style>
 </head>
 
@@ -276,6 +307,12 @@
     </div>
 
     <main class="card">
+      <!-- REQUIRED: Sponsored on first fold -->
+      <div class="adBanner">
+        <span class="adLabel">Advertisement</span>
+        <div class="adSub">Sponsored Content</div>
+      </div>
+
       <section class="hero">
         <div>
           <p class="kicker">For adults researching joint-support supplements</p>
@@ -298,7 +335,7 @@
             </a>
 
             <a class="link" href="https://902b48n1-l5cxg06varmv-ysby.hop.clickbank.net" target="_blank" rel="nofollow noopener">
-              Check price & availability
+              Check price &amp; availability
             </a>
           </div>
 
@@ -336,7 +373,7 @@
           <div class="box">
             <h3>What this product is usually used for</h3>
             <ul>
-              <li>General joint comfort & daily support (non-specific).</li>
+              <li>General joint comfort &amp; daily support (non-specific).</li>
               <li>People who prefer gummies over capsules.</li>
               <li>Those comparing bundles for better value.</li>
             </ul>
@@ -371,10 +408,11 @@
 
   <script>
     const now = new Date();
-    document.getElementById('d').textContent = now.toLocaleDateString(undefined, {year:'numeric', month:'short', day:'2-digit'});
+    document.getElementById('d').textContent =
+      now.toLocaleDateString(undefined, {year:'numeric', month:'short', day:'2-digit'});
     document.getElementById('y').textContent = now.getFullYear();
   </script>
 </body>
 </html>
 
-    
+  
